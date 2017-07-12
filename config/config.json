@@ -1,0 +1,3 @@
+{
+  "mongoDbUri": "mongodb://localhost/test"
+}
