@@ -60,4 +60,15 @@ router.route('/campaigns')
       })
     })
 
+    router.get('/campaigns/:id/pledges', (req, res) => {
+      Campaign.findOne({ _id: req.params.id })
+              .populate('pledges')
+              .exec((err, pledges) => {
+                if (err) {
+                  return res.send(err)
+                }
+                res.json(pledges)
+              });
+    })
+
 module.exports = router
